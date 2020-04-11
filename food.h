@@ -15,11 +15,11 @@ public:
     int GetProgressBar();
 private:
     int cnt;
-    bool flash_flag;//ÉÁË¸±ê¼Ç
-    bool big_flag;//ÊÇ·ñÓĞÏŞÊ±Ê³Îï±ê¼Ç
+    bool flash_flag;//é—ªçƒæ ‡è®°
+    bool big_flag;//æ˜¯å¦æœ‰é™æ—¶é£Ÿç‰©æ ‡è®°
     int x, y;
     int big_x, big_y;
-    int progress_bar;//ÏŞÊ±Ê³Îï½ø¶ÈÌõ
+    int progress_bar;//é™æ—¶é£Ÿç‰©è¿›åº¦æ¡
     friend class Snake;
 };
 #endif // FOOD_H

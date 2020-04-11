@@ -7,7 +7,7 @@
 class Map
 {
 public:
-    Map()//默认构造函数，将正方形各点压入initmap
+    Map()//榛樿鏋勯�犲嚱鏁帮紝灏嗘鏂瑰舰鍚勭偣鍘嬪叆initmap
     {
         initmap.emplace_back(Point(1, 1));
         initmap.emplace_back(Point(2, 1));
@@ -126,10 +126,10 @@ public:
         initmap.emplace_back(Point(29, 30));
         initmap.emplace_back(Point(30, 30));
     }
-    void PrintInitmap();//绘制初始地图
+    void PrintInitmap();//缁樺埗鍒濆鍦板浘
 private:
-    std::vector<Point> initmap;//保存初始地图
-    /*Map类可自定义多种地图，只需将表示地图的各个点保存在相应的map中，并在Snake类中增加相应判断撞墙函数即可
+    std::vector<Point> initmap;//淇濆瓨鍒濆鍦板浘
+    /*Map绫诲彲鑷畾涔夊绉嶅湴鍥撅紝鍙渶灏嗚〃绀哄湴鍥剧殑鍚勪釜鐐逛繚瀛樺湪鐩稿簲鐨刴ap涓紝骞跺湪Snake绫讳腑澧炲姞鐩稿簲鍒ゆ柇鎾炲鍑芥暟鍗冲彲
     std::vector<Point> map1;
     std::vector<Point> map2;
     */

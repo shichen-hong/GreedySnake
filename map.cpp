@@ -1,11 +1,11 @@
 #include "map.h"
 #include <windows.h>
 
-void Map::PrintInitmap()//»æÖÆ³õÊ¼µØÍ¼
+void Map::PrintInitmap()//ç»˜åˆ¶åˆå§‹åœ°å›¾
 {
     for (auto& point : initmap)
     {
         point.Print();
-        Sleep(10);//µ÷ÓÃSleepº¯Êı¿ÉÓªÔì¶¯»­Ğ§¹û
+        Sleep(10);//è°ƒç”¨Sleepå‡½æ•°å¯è¥é€ åŠ¨ç”»æ•ˆæœ
     }
 }

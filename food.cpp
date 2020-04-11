@@ -4,10 +4,10 @@
 #include <iostream>
 
 
-void Food::DrawFood(Snake& csnake)//»æÖÆÊ³Îï
+void Food::DrawFood(Snake& csnake)//ç»˜åˆ¶é£Ÿç‰©
 {
-    /*ÀûÓÃrandº¯Êı»ñµÃ×ø±ê£¬²¢½«Æä·¶Î§ÏŞÖÆÔÚ2-29ÄÚ£¬¼´ÔÚµØÍ¼ÄÚ£¬Èç¹û»ñµÃµÄ×ø±êÓëÉßÉíÖØµş£¬ÔòÖØĞÂ»ñÈ¡¡£
-      Í¬Ê±Ã¿5¿ÅÊ³Îï¾Í³öÏÖÒ»¿ÅÏŞÊ±Ê³Îï*/
+    /*åˆ©ç”¨randå‡½æ•°è·å¾—åæ ‡ï¼Œå¹¶å°†å…¶èŒƒå›´é™åˆ¶åœ¨2-29å†…ï¼Œå³åœ¨åœ°å›¾å†…ï¼Œå¦‚æœè·å¾—çš„åæ ‡ä¸è›‡èº«é‡å ï¼Œåˆ™é‡æ–°è·å–ã€‚
+      åŒæ—¶æ¯5é¢—é£Ÿç‰©å°±å‡ºç°ä¸€é¢—é™æ—¶é£Ÿç‰©*/
     while (true)
     {
         int tmp_x = rand() % 30;
@@ -28,7 +28,7 @@ void Food::DrawFood(Snake& csnake)//»æÖÆÊ³Îï
         y = tmp_y;
         SetCursorPosition(x, y);
         SetColor(13);
-        std::cout << "¡ï" ;
+        std::cout << "â˜…" ;
         ++cnt;
         cnt %= 5;
         if (cnt == 0)
@@ -39,11 +39,11 @@ void Food::DrawFood(Snake& csnake)//»æÖÆÊ³Îï
     }
 }
 
-void Food::DrawBigFood(Snake& csnake)//»æÖÆÏŞÊ±Ê³Îï
+void Food::DrawBigFood(Snake& csnake)//ç»˜åˆ¶é™æ—¶é£Ÿç‰©
 {
     SetCursorPosition(5, 0);
     SetColor(11);
-    std::cout << "------------------------------------------" ;//½ø¶ÈÌõ
+    std::cout << "------------------------------------------" ;//è¿›åº¦æ¡
     progress_bar = 42;
     while (true)
     {
@@ -67,7 +67,7 @@ void Food::DrawBigFood(Snake& csnake)//»æÖÆÏŞÊ±Ê³Îï
         big_y = tmp_y;
         SetCursorPosition(big_x, big_y);
         SetColor(18);
-        std::cout << "¡ö" ;
+        std::cout << "â– " ;
         big_flag = true;
         flash_flag = true;
         break;
@@ -79,7 +79,7 @@ int Food::GetCnt()
     return cnt;
 }
 
-void Food::FlashBigFood()//ÉÁË¸ÏŞÊ±Ê³Îï
+void Food::FlashBigFood()//é—ªçƒé™æ—¶é£Ÿç‰©
 {
     SetCursorPosition(big_x, big_y);
     SetColor(18);
@@ -90,13 +90,13 @@ void Food::FlashBigFood()//ÉÁË¸ÏŞÊ±Ê³Îï
     }
     else
     {
-        std::cout << "¡ö" ;
+        std::cout << "â– " ;
         flash_flag = true;
     }
 
     SetCursorPosition(26, 0);
     SetColor(11);
-    for (int i = 42; i >= progress_bar; --i)//½ø¶ÈÌõËõ¶Ì
+    for (int i = 42; i >= progress_bar; --i)//è¿›åº¦æ¡ç¼©çŸ­
         std::cout << "\b \b" ;
     --progress_bar;
     if (progress_bar == 0) {

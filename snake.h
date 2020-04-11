@@ -28,6 +28,6 @@ public:
 private:
     std::deque<Point> snake;
     Direction direction;
-    friend class Food;//½«FoodÀàÖÃÎªÓÑÔª£¬ÒÔ±ã·ÃÎÊÆäË½ÓĞÔªËØ
+    friend class Food;//å°†Foodç±»ç½®ä¸ºå‹å…ƒï¼Œä»¥ä¾¿è®¿é—®å…¶ç§æœ‰å…ƒç´ 
 };
 #endif // SNAKE_H

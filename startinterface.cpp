@@ -2,7 +2,7 @@
 #include <windows.h>
 
 
-void StartInterface::PrintFirst()//Éß´Ó×ó±ß³öÏÖµ½ÍêÈ«³öÏÖµÄ¹ı³Ì
+void StartInterface::PrintFirst()//è›‡ä»å·¦è¾¹å‡ºç°åˆ°å®Œå…¨å‡ºç°çš„è¿‡ç¨‹
 {
     for (auto& point : startsnake)
     {
@@ -11,11 +11,11 @@ void StartInterface::PrintFirst()//Éß´Ó×ó±ß³öÏÖµ½ÍêÈ«³öÏÖµÄ¹ı³Ì
     }
 }
 
-void StartInterface::PrintSecond()//Éß´Ó×óÏòÓÒÒÆ¶¯µÄ¹ı³Ì
+void StartInterface::PrintSecond()//è›‡ä»å·¦å‘å³ç§»åŠ¨çš„è¿‡ç¨‹
 {
-    for (int i = 10; i != 40; ++i) //ÉßÍ·ĞèÒª´Ó10ÒÆ¶¯µ½40
+    for (int i = 10; i != 40; ++i) //è›‡å¤´éœ€è¦ä»10ç§»åŠ¨åˆ°40
     {
-        /*¼ÆËãÉßÍ·µÄÏÂÒ»¸öÎ»ÖÃ£¬²¢½«ÆäÑ¹ÈëstartsnakeÖĞ£¬»æÖÆ³öÀ´£¬½«ÉßÎ²È¥µô*/
+        /*è®¡ç®—è›‡å¤´çš„ä¸‹ä¸€ä¸ªä½ç½®ï¼Œå¹¶å°†å…¶å‹å…¥startsnakeä¸­ï¼Œç»˜åˆ¶å‡ºæ¥ï¼Œå°†è›‡å°¾å»æ‰*/
         int j = ( ((i-2)%8) < 4 )?( 15 + (i-2)%8 ) : ( 21 - (i-2)%8 );
         startsnake.emplace_back( Point(i, j) );
         startsnake.back().Print();
@@ -25,17 +25,17 @@ void StartInterface::PrintSecond()//Éß´Ó×óÏòÓÒÒÆ¶¯µÄ¹ı³Ì
     }
 }
 
-void StartInterface::PrintThird()//Éß´Ó½Ó´¥ÓÒ±ßµ½ÏûÊ§µÄ¹ı³Ì
+void StartInterface::PrintThird()//è›‡ä»æ¥è§¦å³è¾¹åˆ°æ¶ˆå¤±çš„è¿‡ç¨‹
 {
-    while ( !startsnake.empty() || textsnake.back().GetX() < 33 ) //µ±Éß»¹Ã»ÏûÊ§»òÎÄ×ÖÃ»ÒÆ¶¯µ½Ö¸¶¨Î»ÖÃ
+    while ( !startsnake.empty() || textsnake.back().GetX() < 33 ) //å½“è›‡è¿˜æ²¡æ¶ˆå¤±æˆ–æ–‡å­—æ²¡ç§»åŠ¨åˆ°æŒ‡å®šä½ç½®
     {
-        if ( !startsnake.empty() ) //Èç¹ûÉß»¹Ã»ÏûÊ§£¬¼ÌĞøÒÆ¶¯
+        if ( !startsnake.empty() ) //å¦‚æœè›‡è¿˜æ²¡æ¶ˆå¤±ï¼Œç»§ç»­ç§»åŠ¨
         {
             startsnake.front().Clear();
             startsnake.pop_front();
         }
-        ClearText();//Çå³ıÒÑÓĞÎÄ×Ö
-        PrintText();//»æÖÆ¸üĞÂÎ»ÖÃºóµÄÎÄ×Ö
+        ClearText();//æ¸…é™¤å·²æœ‰æ–‡å­—
+        PrintText();//ç»˜åˆ¶æ›´æ–°ä½ç½®åçš„æ–‡å­—
         Sleep(speed);
     }
 }
@@ -51,7 +51,7 @@ void StartInterface::PrintText()
 
 void StartInterface::ClearText()
 {
-    for (auto& point : textsnake) //Çå³ıµÄÍ¬Ê±½«ÎÄ×ÖÕûÌåÏòÓÒÒÆ¶¯Ò»¸ñ
+    for (auto& point : textsnake) //æ¸…é™¤çš„åŒæ—¶å°†æ–‡å­—æ•´ä½“å‘å³ç§»åŠ¨ä¸€æ ¼
     {
         if (point.GetX() >= 0)
             point.Clear();

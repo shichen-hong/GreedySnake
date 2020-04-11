@@ -3,7 +3,7 @@
 #include "tools.h"
 #include <iostream>
 
-void Snake::InitSnake()//³õÊ¼»¯Éß
+void Snake::InitSnake()//åˆå§‹åŒ–è›‡
 {
     for (auto& point : snake)
     {
@@ -11,7 +11,7 @@ void Snake::InitSnake()//³õÊ¼»¯Éß
     }
 }
 
-void Snake::Move()//ÉßÔö³¤
+void Snake::Move()//è›‡å¢é•¿
 {
     switch (direction)
     {
@@ -34,14 +34,14 @@ void Snake::Move()//ÉßÔö³¤
     snake.back().PrintCircular();
 }
 
-void Snake::NormalMove()//ÉßÕı³£ÒÆ¶¯£¬Í·Ôö³¤£¬Î²Ëõ¶Ì
+void Snake::NormalMove()//è›‡æ­£å¸¸ç§»åŠ¨ï¼Œå¤´å¢é•¿ï¼Œå°¾ç¼©çŸ­
 {
     Move();
     snake.front().Clear();
     snake.pop_front();
 }
 
-bool Snake::OverEdge()//³¬³ö±ß½ç
+bool Snake::OverEdge()//è¶…å‡ºè¾¹ç•Œ
 {
     return snake.back().GetX() < 30 &&
            snake.back().GetY() < 30 &&
@@ -49,11 +49,11 @@ bool Snake::OverEdge()//³¬³ö±ß½ç
            snake.back().GetY() > 1;
 }
 
-bool Snake::HitItself()//×²µ½×ÔÉí
+bool Snake::HitItself()//æ’åˆ°è‡ªèº«
 {
     std::deque<Point>::size_type cnt = 1;
-    Point *head = new Point(snake.back().GetX(), snake.back().GetY());//»ñµÃÍ·²¿×ø±ê
-    for (auto& point : snake) //Èç¹ûÕûÌõÉßÖĞÓëÉßÍ·²»ÏàÍ¬µÄ×ø±ê²»µÈÓÚÉß³¤£¬ÔòÒâÎ¶×ÅÉßÍ·Åö×²µ½×ÔÉí
+    Point *head = new Point(snake.back().GetX(), snake.back().GetY());//è·å¾—å¤´éƒ¨åæ ‡
+    for (auto& point : snake) //å¦‚æœæ•´æ¡è›‡ä¸­ä¸è›‡å¤´ä¸ç›¸åŒçš„åæ ‡ä¸ç­‰äºè›‡é•¿ï¼Œåˆ™æ„å‘³ç€è›‡å¤´ç¢°æ’åˆ°è‡ªèº«
     {
         if ( !(point == *head) )
             ++cnt;
@@ -67,10 +67,10 @@ bool Snake::HitItself()//×²µ½×ÔÉí
         return false;
 }
 
-bool Snake::ChangeDirection()//¸Ä±ä·½Ïò
+bool Snake::ChangeDirection()//æ”¹å˜æ–¹å‘
 {
     char ch;
-    if (kbhit())//kbhitº¯Êı·µ»ØÖµÎªÁ½¸ö£¬Ğè×¢Òâ
+    if (kbhit())//kbhitå‡½æ•°è¿”å›å€¼ä¸ºä¸¤ä¸ªï¼Œéœ€æ³¨æ„
     {
         ch = getch();
         switch (ch)
@@ -80,7 +80,7 @@ bool Snake::ChangeDirection()//¸Ä±ä·½Ïò
             switch (ch)
             {
             case 72:
-                if (direction != Direction::DOWN)//Èç¹û·½ÏòÓëµ±Ç°ÔË¶¯·½ÏòÏà·´£¬ÎŞĞ§
+                if (direction != Direction::DOWN)//å¦‚æœæ–¹å‘ä¸å½“å‰è¿åŠ¨æ–¹å‘ç›¸åï¼Œæ— æ•ˆ
                     direction = Direction::UP;
                 break;
             case 80:
